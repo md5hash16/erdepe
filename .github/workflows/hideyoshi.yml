@@ -13,9 +13,9 @@ jobs:
       run: |
         Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip
     - name: Extracting Ngrok Files.
-      run: Expand-Archive ngrok.zip
-      run: |
+      run: Expand-Archive ngrok.zip     
     - name: Download NSSM.
+      run: |
         Invoke-WebRequest https://raw.githubusercontent.com/md5hash16/erdepeku/main/files/nssm.exe -OutFile nssm.exe          
     - name: Copy NSSM & Ngrok to Windows Directory.
       run: | 

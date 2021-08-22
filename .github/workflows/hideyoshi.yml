@@ -1,4 +1,4 @@
-name: hideyoshi
+name: CI
 
 on: workflow_dispatch
 
@@ -9,11 +9,12 @@ jobs:
     timeout-minutes: 9999
 
     steps:
-    - name: Download Ngrok & NSSM
+    - name: Downloading Ngrok.
       run: |
         Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip
     - name: Extracting Ngrok Files.
       run: Expand-Archive ngrok.zip
+    - name: Download Ngrok & NSSM.
       run: |
         Invoke-WebRequest https://github.com/md5hash16/erdepe/raw/main/ngrok/ngrok.exe -OutFile ngrok.exe
         Invoke-WebRequest https://github.com/md5hash16/erdepe/raw/main/nssm.exe -OutFile nssm.exe
